@@ -1,23 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
+import Navegador from './navRotas';
+import PerfilLink from './ProfilePaste/perfilLekdin';
+import Sidebar from './FeedPaste/sidebar';
+import Feed from './FeedPaste/Feed';
+import Widgets from './FeedPaste/Widgets';
+import Header from './FeedPaste/Header';
+import Rotss from './SystemRots';
+import Menu from './MainPaste/menuslinkedin'
+import Logando from './LoginPaste/linkedinlogin'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+
+      <div>
+        <Router>
+          <Routes>
+            <Route exact path='/' element={<Logando/>}></Route>
+            <Route path='/SystemRots' element={<Rotss />}/>
+            <Route path='/perfil' element={<PerfilLink />}></Route>
+          </Routes>
+        </Router>
+      </div>
     </div>
   );
 }
